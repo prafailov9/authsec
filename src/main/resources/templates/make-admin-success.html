@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css"
+	th:href="@{/bootstrap/css/bootstrap.min.css}" />
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:object="${username}">
+		<center>
+			<div>
+				<br />
+				<h2>Account</h2>
+				<h2 th:text="${username}"></h2>
+				<h2>is now an admin!</h2>
+			</div>
+			<br />
+			<div>
+				<a href="/">
+					 <input type="submit" class="btn btn-primary" value="Go to dashboard"/>
+				</a>
+			</div>
+		</center>
+	</form>
+</body>
+</html>

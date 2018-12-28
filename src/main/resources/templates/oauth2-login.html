@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css"
+	th:href="@{/bootstrap/css/bootstrap.min.css}" />
+<style>
+@CHARSET "UTF-8";
+
+#outer {
+	width: 100%;
+	text-align: center;
+}
+
+.inner {
+	display: inline-block;
+}
+</style>
+</head>
+<body>
+	
+	<a href="http://localhost:8090/login/oauth2/code/google">Google</a>
+	
+	<script th:src="@{/jquery/jquery.min.js}"></script>
+	<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

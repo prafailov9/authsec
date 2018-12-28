@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Login</title>
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css"
+	th:href="@{/bootstrap/css/bootstrap.min.css}" />
+<style>
+@CHARSET "UTF-8";
+
+#outer {
+	width: 100%;
+	text-align: center;
+}
+
+.inner {
+	display: inline-block;
+}
+</style>
+</head>
+<body>
+
+	<div class="container">
+		<center>
+			<h1>Login</h1>
+		</center>
+		<br />
+		<div th:if="${error} != null" th:text="${error}"></div>
+		<form method="post">
+			<center>
+				<div class="form-group">
+					<label class="form-control-label" for="inputUsername">Username</label>
+					<input type="text" class="form-control form-control-danger"
+						id="inputUsername" name="username" />
+				</div>
+				<div class="form-group">
+					<label class="form-control-label" for="inputPassword">Password</label>
+					<input type="password" class="form-control form-control-danger"
+						id="inputPassword" name="password" />
+				</div>
+				<input type="submit" class="btn btn-primary" value="Log In" />
+			</center>
+		</form>
+		<br />
+
+		<form>
+			<div>
+				<center>
+
+					<a class="btn login-btn" href="/login"
+						title="Log in with other providers">
+						<h1>Login with other providers</h1>
+					</a> <br /> <a class="btn register-btn" href="/register"
+						title="Register">
+						<h1>Register</h1>
+					</a>
+
+				</center>
+			</div>
+		</form>
+	</div>
+
+
+</body>
+</html>

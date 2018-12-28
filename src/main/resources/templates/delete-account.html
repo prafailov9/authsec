@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>All Users</title>
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css"
+	th:href="@{/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+
+
+	<div class="col-md-8 text-left">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Username:</th>
+				</tr>
+			</thead>
+			<tr th:each="user : ${allAccounts}">
+				<td th:text="${user.username}"></td>
+				<td th:text="${user.getRoles()}"></td>
+				<td>
+
+					<div>
+						<a th:href="@{/delete-user-account?username=} + ${user.username}">
+							<input type="submit" class="btn btn-primary" value="delete" />
+						</a>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>

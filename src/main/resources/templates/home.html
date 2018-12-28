@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css"
+	th:href="@{/bootstrap/css/bootstrap.min.css}" />
+<meta charset="UTF-8" />
+<title>Home</title>
+</head>
+
+<body>
+
+	<form>
+		<div>
+			<center>
+			<br/>
+			<br/>
+				<h1>Authorization Service</h1>
+
+
+				<div sec:authorize="isAnonymous()">
+					
+					<br/>
+					<h2>
+						<a href="/native-login">Enter</a>
+					</h2>
+
+				</div>
+			</center>
+		</div>
+
+		<div class="container authenticated" sec:authorize="isAuthenticated()">
+			<div>
+				<button type="button" onclick="location.href='/logout';" class="btn btn-primary">Logout</button>
+			</div>
+			<br />
+			<div sec:authorize="hasRole('ROLE_ADMIN')">
+
+				<button type="button" onclick="location.href='/admin-dashboard';"
+					class="btn btn-primary">Go To Dashboard</button>
+
+			</div>
+			<div sec:authorize="hasRole('ROLE_USER')">
+
+				<button type="button" onclick="location.href='/dashboard';"
+					class="btn btn-primary">Go To Dashboard</button>
+
+			</div>
+		</div>
+	</form>
+	
+</body>
+
+</html>

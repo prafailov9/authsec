@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Error Page</title>
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css"
+	th:href="@{/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+
+	<div class="col-sm-8 text-left">
+		<div th:text="${message}" class="text-danger error"></div>
+	</div>
+
+</body>
+</html>
